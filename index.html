@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DJ KAZA · beats from my bedroom</title>
+<meta name="description" content="DJ KAZA makes beats in his bedroom. Track 01: “pressure cooker.”">
+<meta property="og:title" content="DJ KAZA · beats from my bedroom">
+<meta property="og:description" content="Track 01: “pressure cooker.” Built on my mom's pressure cooker. She says it's very loud.">
+<meta property="og:image" content="https://djkaza.xyz/img/og.jpg">
+<meta property="og:url" content="https://djkaza.xyz/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d0b14">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--bg:#0d0b14;--ink:#f4f0ff;--dim:#a99fc2;--lav:#c9b6ff;--purple:#4A1955;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.13);--hand:'Patrick Hand',cursive}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 18px/1.55 Barlow,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body:before{content:'';position:fixed;inset:-20%;pointer-events:none;z-index:-1;
+  background:radial-gradient(40% 35% at 70% 20%,rgba(140,60,200,.35),transparent 70%),radial-gradient(35% 30% at 15% 75%,rgba(70,40,160,.25),transparent 70%)}
+a{color:var(--lav)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font:600 15px 'Barlow Condensed';letter-spacing:2px;text-transform:uppercase}
+nav b{font:800 22px 'Big Shoulders Display';letter-spacing:1px;text-transform:none}
+nav a{color:var(--dim);text-decoration:none;margin-left:18px}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:30px 0 10px}
+h1{font:800 clamp(92px,15vw,190px)/.86 'Big Shoulders Display';letter-spacing:3px}
+.sub{font:700 clamp(17px,2.2vw,24px) 'Barlow Condensed';letter-spacing:7px;color:var(--lav);margin-top:14px}
+.photo{position:relative;transform:rotate(1.5deg)}
+.photo img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px var(--line)}
+.note{position:absolute;font:24px/1.1 var(--hand);color:#1b1630;background:#fff5a8;padding:8px 14px 10px;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.photo .note{left:-26px;bottom:26px;transform:rotate(-6deg)}
+
+/* player */
+.player{margin:44px 0 0;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.play{width:92px;height:92px;border-radius:50%;border:0;background:#fff;cursor:pointer;display:grid;place-items:center;transition:transform .15s}
+.play:hover{transform:scale(1.05)}.play:active{transform:scale(.96)}
+.play svg{width:34px;height:34px;fill:var(--bg)}
+.meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.track{font:700 15px 'Barlow Condensed';letter-spacing:3px;color:var(--dim);text-transform:uppercase}
+.track b{font:700 26px Barlow;letter-spacing:0;color:var(--ink);text-transform:none;display:block;margin-top:2px}
+.time{font:500 15px Barlow;color:var(--dim);font-variant-numeric:tabular-nums}
+.wave{display:flex;align-items:center;gap:3px;height:70px;margin-top:12px;cursor:pointer;touch-action:none}
+.wave i{flex:1;border-radius:3px;background:rgba(201,182,255,.28);min-height:3px;transition:background .1s}
+.wave i.on{background:var(--lav)}
+.extras{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.pill{font:600 15px Barlow;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:30px;padding:9px 16px;cursor:pointer}
+.pill:hover{border-color:var(--lav)}
+.pill small{color:var(--dim);font-weight:500}
+
+/* sections */
+section{padding:80px 0 0}
+h2{font:700 15px 'Barlow Condensed';letter-spacing:5px;color:var(--lav);text-transform:uppercase;margin-bottom:20px}
+.next li{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line);font:22px var(--hand)}
+.next li span{color:var(--dim)}
+.about{display:grid;grid-template-columns:200px 1fr;gap:34px;align-items:start}
+.about img{width:200px;height:200px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 6px rgba(201,182,255,.15)}
+.about p{font-size:21px;max-width:640px}
+.about p+p{margin-top:14px}
+.about .hand{font:26px/1.3 var(--hand);color:var(--lav)}
+
+/* the wall */
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding-top:6px}
+.pol{background:#f6f3ec;padding:10px 10px 0;box-shadow:0 18px 40px rgba(0,0,0,.5);transition:transform .25s}
+.pol:nth-child(1){transform:rotate(-3deg)}.pol:nth-child(2){transform:rotate(2deg) translateY(12px)}
+.pol:nth-child(3){transform:rotate(-1.5deg)}.pol:nth-child(4){transform:rotate(3deg) translateY(8px)}
+.pol:hover{transform:rotate(0) scale(1.04);z-index:2}
+.pol img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pol p{font:20px/1.15 var(--hand);color:#2a2340;padding:10px 4px 14px;min-height:70px}
+
+footer{margin:110px 0 0;padding:34px 0 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--dim);font-size:15px}
+footer .made{display:flex;align-items:center;gap:10px}
+footer .made img{height:22px;cursor:pointer}
+footer .fine{width:100%;font-size:12px;opacity:.6}
+
+/* easter egg */
+#egg{position:fixed;inset:0;z-index:50;display:none;background:#000}
+#egg canvas{width:100%;height:100%;display:block}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .hero{grid-template-columns:1fr;gap:26px;padding-top:6px}
+  .photo{transform:rotate(1deg);margin:0 6px}
+  .photo .note{left:-6px;bottom:-14px;font-size:21px}
+  .player{grid-template-columns:1fr;border-radius:22px;padding:18px}
+  .play{width:76px;height:76px}
+  .wave{height:56px;gap:2px}
+  .about{grid-template-columns:1fr;gap:20px}
+  .about img{width:140px;height:140px}
+  .wall{grid-template-columns:repeat(2,1fr);gap:18px}
+  nav a{margin-left:12px}
+  section{padding-top:60px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><b>djkaza.xyz</b><div><a href="#beats">beats</a><a href="#about">about</a><a href="#wall">wall</a></div></nav>
+
+  <header class="hero">
+    <div>
+      <h1>DJ<br>KAZA</h1>
+      <div class="sub">BEATS FROM MY BEDROOM</div>
+    </div>
+    <div class="photo">
+      <img src="img/hero.jpg" width="1100" height="999" alt="Kaza at his desk at night, wearing big headphones, smiling while he taps a drum pad">
+      <div class="note">me, last night ↑</div>
+    </div>
+  </header>
+
+  <div class="player" id="beats">
+    <button class="play" id="play" aria-label="Play “pressure cooker”"><svg viewBox="0 0 24 24" id="icon"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+    <div>
+      <div class="meta">
+        <div class="track">Track 01<b>“pressure cooker”</b></div>
+        <div class="time" id="time">0:00 / 0:46</div>
+      </div>
+      <div class="wave" id="wave" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="46" aria-valuenow="0" tabindex="0"></div>
+    </div>
+  </div>
+  <div class="extras">
+    <button class="pill" id="sample">▶ the original sample <small>(my mom's pressure cooker)</small></button>
+  </div>
+  <audio id="audio" src="pressure-cooker.mp3" preload="metadata"></audio>
+  <audio id="mom" src="sample-mom.mp3" preload="none"></audio>
+
+  <section>
+    <h2>Coming up</h2>
+    <ul class="next">
+      <li>track 02 · “locker 214” <span>this friday (probably)</span></li>
+      <li>track 03 · “bus window” <span>working on it</span></li>
+      <li>track 04 · “wave back” <span>it's personal</span></li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <img src="img/me.jpg" width="520" height="517" alt="Kaza in the bathroom mirror with his new hair, smiling">
+      <div>
+        <p>hi. i'm kaza. (karan zaveri, if you're my teacher.)</p>
+        <p>i'm 13 and i make beats in my room after homework, on an old laptop and a little drum pad. my first track is built on my mom's pressure cooker. she says it's “very loud.” it is.</p>
+        <p>i tried a lot of names. KA from karan, ZA from zaveri. DJ KAZA. i wrote it on my shoe so it's official.</p>
+        <p class="hand">new beats every friday-ish.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="wall">
+    <h2>The wall</h2>
+    <div class="wall">
+      <figure class="pol"><img src="img/notebook.jpg" loading="lazy" alt="A notebook page with crossed-out names and DJ KAZA circled"><p>how i got my name</p></figure>
+      <figure class="pol"><img src="img/firstnight.jpg" loading="lazy" alt="Kaza at his desk, tapping a drum pad for the first time"><p>night one. it sounded bad.</p></figure>
+      <figure class="pol"><img src="img/shoe.jpg" loading="lazy" alt="Writing djkaza.xyz on the side of a sneaker with a marker"><p>wrote it on my shoe so i don't forget</p></figure>
+      <figure class="pol"><img src="img/bedside.jpg" loading="lazy" alt="Sneakers by the bed at night with djkaza.xyz written on the sole"><p>ready for tomorrow</p></figure>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 dj kaza · my name, my corner of the internet.</div>
+    <div class="made">made on a <img src="img/xyz.svg" alt=".xyz" id="xyz" title="tap me"> · <a href="https://gen.xyz/" target="_blank" rel="noopener">get yours</a></div>
+    <div class="fine">DJ KAZA is a character from the .xyz film “Everybody starts somewhere.”</div>
+  </footer>
+</div>
+
+<div id="egg" aria-hidden="true"><canvas id="cv"></canvas></div>
+<audio id="glitch" src="glitch.mp3" preload="none"></audio>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const audio = $('audio'), wave = $('wave'), time = $('time'), icon = $('icon');
+  const PLAY = 'M7 4.5v15l13-7.5z', PAUSE = 'M6 4h4.5v16H6zM13.5 4H18v16h-4.5z';
+  const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+  let bars = [], dur = 46.5;
+
+  fetch('peaks.json').then(r => r.json()).then(j => {
+    dur = j.dur;
+    const n = innerWidth < 760 ? 60 : 120, p = j.peaks;
+    for (let i = 0; i < n; i++) {
+      const v = p[Math.floor(i * p.length / n)], b = document.createElement('i');
+      b.style.height = (12 + v * 88) + '%'; wave.appendChild(b); bars.push(b);
+    }
+  });
+
+  function draw() {
+    const k = (audio.currentTime || 0) / (audio.duration || dur);
+    bars.forEach((b, i) => b.classList.toggle('on', i / bars.length < k));
+    time.textContent = `${fmt(audio.currentTime || 0)} / ${fmt(audio.duration || dur)}`;
+    wave.setAttribute('aria-valuenow', Math.round(audio.currentTime || 0));
+    if (!audio.paused) requestAnimationFrame(draw);
+  }
+  $('play').onclick = () => { audio.paused ? audio.play() : audio.pause(); };
+  audio.onplay = () => { icon.firstChild.setAttribute('d', PAUSE); $('play').setAttribute('aria-label', 'Pause'); draw(); };
+  audio.onpause = audio.onended = () => { icon.firstChild.setAttribute('d', PLAY); $('play').setAttribute('aria-label', 'Play “pressure cooker”'); draw(); };
+  function seek(e) {
+    const r = wave.getBoundingClientRect(); const k = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    audio.currentTime = k * (audio.duration || dur); draw();
+  }
+  wave.addEventListener('pointerdown', e => { seek(e); wave.setPointerCapture(e.pointerId); wave.onpointermove = seek; });
+  wave.addEventListener('pointerup', () => { wave.onpointermove = null; });
+  wave.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') audio.currentTime += 5; else if (e.key === 'ArrowLeft') audio.currentTime -= 5; else return;
+    e.preventDefault(); draw();
+  });
+  $('sample').onclick = () => { const m = $('mom'); m.currentTime = 0; m.play(); };
+
+  // easter egg: tap the .xyz logo three times, or type "xyz"
+  const cv = $('cv'), g = cv.getContext('2d'), man = new Image(), logo = new Image();
+  man.src = 'img/aydacfu.png'; logo.src = 'img/xyz.svg';
+  const rnd = i => { const s = Math.sin(i * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
+  function glitch() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const egg = $('egg'); egg.style.display = 'block';
+    const W = cv.width = innerWidth * devicePixelRatio, H = cv.height = innerHeight * devicePixelRatio;
+    const snd = $('glitch'); snd.currentTime = 0; snd.play().catch(() => {});
+    const t0 = performance.now(); let f = 0;
+    (function frame() {
+      f = Math.floor((performance.now() - t0) / (1000 / 24));   // clock-driven, so slow phones skip frames instead of running long
+      if (f >= 28) { egg.style.display = 'none'; return; }
+      g.imageSmoothingEnabled = false; g.fillStyle = f % 3 ? '#2a0f33' : '#4A1955'; g.fillRect(0, 0, W, H);
+      if (f < 5 || f > 22) { const w = Math.min(W * .5, 640 * devicePixelRatio), h = w * 49.5 / 85; g.drawImage(logo, (W - w) / 2, (H - h) / 2, w, h); }
+      else { const s = Math.max(W / man.width, H / man.height) * .98, w = man.width * s, h = man.height * s; g.drawImage(man, (W - w) / 2 + (rnd(f) - .5) * 30, (H - h) / 2, w, h); }
+      for (let i = 0; i < 12; i++) { const y = rnd(f * 31 + i) * H, h = 8 + rnd(f * 7 + i) * 80; g.drawImage(cv, 0, y, W, h, (rnd(f * 13 + i) - .5) * 120, y, W, h); }
+      g.fillStyle = 'rgba(0,0,0,.25)'; for (let y = 0; y < H; y += 4 * devicePixelRatio) g.fillRect(0, y, W, 2 * devicePixelRatio);
+      requestAnimationFrame(frame);
+    })();
+  }
+  let taps = 0, tapT = 0;
+  $('xyz').onclick = () => { const now = Date.now(); taps = now - tapT < 700 ? taps + 1 : 1; tapT = now; if (taps >= 3) { taps = 0; glitch(); } };
+  let typed = '';
+  addEventListener('keydown', e => { typed = (typed + e.key).slice(-3).toLowerCase(); if (typed === 'xyz') glitch(); });
+})();
+</script>
+</body>
+</html>
